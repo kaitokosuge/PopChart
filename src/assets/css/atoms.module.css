@@ -5,3 +5,7 @@
   width: 20px;
   height: 20px;
 }
+.m_label {
+  font-size: 1.6rem;
+  font-weight: bold;
+}

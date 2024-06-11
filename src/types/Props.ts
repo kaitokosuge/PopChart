@@ -5,3 +5,8 @@ export interface TitleProps {
 export interface MainCheckBoxProps {
   id: string;
 }
+
+export interface MainLabelProps {
+  id: string;
+  prefName: string;
+}
