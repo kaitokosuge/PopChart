@@ -1,7 +1,10 @@
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
+import.meta.env.RESAS_API_KEY;
+
 function App() {
+  console.log(import.meta.env.VITE_RESAS_API_KEY);
   const options = {
     title: {
       text: "都道府県 人口データ",
