@@ -18,7 +18,7 @@ export default function Top() {
   console.log("prefData", prefData);
   return (
     <>
-      <TopTemplate />
+      <TopTemplate prefData={prefData} />
     </>
   );
 }
