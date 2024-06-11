@@ -10,3 +10,8 @@ export interface MainLabelProps {
   id: string;
   prefName: string;
 }
+
+export interface PrefCheckBoxProps {
+  id: string;
+  prefName: string;
+}
