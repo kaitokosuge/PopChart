@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPopByPrefecture } from "../functions/getPopByPrefecture";
-import PrefListArea from "../components/organisms/PrefListArea";
+import TopTemplate from "../components/templates/TopTemplate";
 
 export default function Top() {
   const prefCode = 10;
@@ -10,8 +10,8 @@ export default function Top() {
   });
   console.log(query.data);
   return (
-    <div>
-      <PrefListArea />
-    </div>
+    <>
+      <TopTemplate />
+    </>
   );
 }
