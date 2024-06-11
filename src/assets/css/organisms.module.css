@@ -1,0 +1,5 @@
+.pref_listarea {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 100px);
+}

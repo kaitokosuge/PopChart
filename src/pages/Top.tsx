@@ -1,9 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPopByPrefecture } from "../functions/getPopByPrefecture";
-import Title from "../components/atoms/Title";
-import MainCheckBox from "../components/atoms/MainCheckBox";
-import MainLabel from "../components/atoms/MainLabel";
-import PrefCheckBox from "../components/molucules/PrefCheckBox";
+import PrefListArea from "../components/organisms/PrefListArea";
 
 export default function Top() {
   const prefCode = 10;
@@ -14,8 +11,7 @@ export default function Top() {
   console.log(query.data);
   return (
     <div>
-      <Title title="都道府県" />
-      <PrefCheckBox id="1" prefName="test" />
+      <PrefListArea />
     </div>
   );
 }
