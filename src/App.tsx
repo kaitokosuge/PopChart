@@ -4,10 +4,33 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import TestFont from "./assets/css/test.module.css";
 
+import * as Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+
 function App() {
   const [count, setCount] = useState(0);
+  const options = {
+    title: {
+      text: "都道府県 人口データ",
+    },
+    series: [
+      {
+        data: [10000, 15000, 13000],
+      },
+    ],
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false,
+        },
+        pointRange: 10,
+        pointStart: 1970,
+      },
+    },
+  };
   return (
     <>
+      <HighchartsReact highcharts={Highcharts} options={options} />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
