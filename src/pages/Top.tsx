@@ -4,12 +4,12 @@ import TopTemplate from "../components/templates/TopTemplate";
 import { getPrefectures } from "../functions/getPrefectures";
 
 export default function Top() {
-  const prefCode = 10;
-  const query = useQuery({
-    queryKey: [`${prefCode}`],
-    queryFn: () => getPopByPrefecture(prefCode),
-  });
-  console.log(query.data);
+  // const prefCode = 10;
+  // const query = useQuery({
+  //   queryKey: [`${prefCode}`],
+  //   queryFn: () => getPopByPrefecture(prefCode),
+  // });
+  // console.log(query.data);
 
   const prefData = useQuery({
     queryKey: [`prefectures`],
