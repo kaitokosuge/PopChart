@@ -3,7 +3,7 @@ import atomes from "../../assets/css/atoms.module.css";
 
 export default function MainLabel({ id, prefName }: MainLabelProps) {
   return (
-    <label htmlFor={id} className={atomes.m_label}>
+    <label htmlFor={id} className={atomes.main_label}>
       {prefName}
     </label>
   );
