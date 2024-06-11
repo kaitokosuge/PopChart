@@ -5,7 +5,7 @@ import Title from "../components/atoms/Title";
 export default function Top() {
   const prefCode = 10;
   const query = useQuery({
-    queryKey: ["population"],
+    queryKey: [`${prefCode}`],
     queryFn: () => getPopByPrefecture(prefCode),
   });
   console.log(query.data);
