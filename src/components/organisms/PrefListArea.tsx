@@ -5,26 +5,32 @@ import { PrefListAreaProps } from "../../types/Props";
 import { PrefData } from "../../types/Variables";
 
 export default function PrefListArea({ prefData }: PrefListAreaProps) {
-  if (prefData.error)
+  if (prefData.isPending) {
+    return (
+      <section>
+        <Title title="都道府県" />
+        都道府県データの取得中です
+      </section>
+    );
+  }
+  if (prefData.error) {
     return (
       <section>
         <Title title="都道府県" />
         都道府県データの取得に失敗しました{prefData.error.message}
       </section>
     );
+  }
   return (
     <section>
       <Title title="都道府県" />
-      {prefData.isPending && (
-        <>
-          <p>都道府県データを読み込んでいます...</p>
-        </>
-      )}
       <div className={organisms.pref_listarea}>
         {prefData.data.result.map((pref: PrefData) => (
-          <>
-            <PrefCheckBox id={pref.prefCode} prefName={pref.prefName} />
-          </>
+          <PrefCheckBox
+            id={pref.prefName}
+            prefName={pref.prefName}
+            key={pref.prefName}
+          />
         ))}
       </div>
     </section>
