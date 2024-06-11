@@ -1,11 +1,11 @@
 .title {
   font-size: 3.2rem;
 }
-.m_checkbox {
+.main_checkbox {
   width: 20px;
   height: 20px;
 }
-.m_label {
+.main_label {
   font-size: 1.6rem;
   font-weight: bold;
 }
