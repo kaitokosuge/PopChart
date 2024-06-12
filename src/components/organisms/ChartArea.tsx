@@ -1,17 +1,14 @@
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import Title from "../atoms/Title";
+import { ChartDataProps } from "../../types/Props";
 
-export default function ChartArea() {
+export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   const options = {
     title: {
       text: "都道府県 人口データ",
     },
-    series: [
-      {
-        data: [10000, 15000, 13000],
-      },
-    ],
+    series: prefPopChartDatas,
     plotOptions: {
       series: {
         label: {
