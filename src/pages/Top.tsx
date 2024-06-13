@@ -25,7 +25,13 @@ export default function Top() {
       prefPopData.data.result.data[0].data,
       e.target.id
     );
-    setPrefChartData([...prefPopChartDatas, chartData]);
+    if (prefPopChartDatas.some((item) => item.name === e.target.id)) {
+      setPrefChartData(
+        prefPopChartDatas.filter((item) => item.name !== e.target.id)
+      );
+    } else {
+      setPrefChartData([...prefPopChartDatas, chartData]);
+    }
   };
 
   return (

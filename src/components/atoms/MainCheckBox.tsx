@@ -3,14 +3,16 @@ import atomes from "../../assets/css/atoms.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { getPopByPrefecture } from "../../functions/getPopByPrefecture";
 import { useChangeCheckBox } from "../../hooks/useChangeCheckBox";
+import { memo } from "react";
 
-export default function MainCheckBox({ id }: MainCheckBoxProps) {
+function MainCheckBox({ id }: MainCheckBoxProps) {
   const { handleChangeMainCheckBox } = useChangeCheckBox();
   const prefPopData = useQuery({
     queryKey: [`${Number(id)}`],
     queryFn: () => getPopByPrefecture(Number(id)),
+    staleTime: Infinity,
   });
-  console.log("prefPopData", prefPopData);
+
   return (
     <input
       type="checkbox"
@@ -20,3 +22,4 @@ export default function MainCheckBox({ id }: MainCheckBoxProps) {
     />
   );
 }
+export default memo(MainCheckBox);
