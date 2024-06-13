@@ -4,6 +4,7 @@ import { getPrefectures } from "../functions/getPrefectures";
 import { parseApiDataToChartData } from "../functions/parseApiDataToChartData";
 import { useState } from "react";
 import { ChartData } from "../types/Variables";
+import { ChangeCheckBoxContext } from "../hooks/useChangeCheckBox";
 
 export default function Top() {
   const prefData = useQuery({
@@ -20,25 +21,25 @@ export default function Top() {
     if (prefPopData.isPending) {
       return <>loading</>;
     }
-
     const chartData = parseApiDataToChartData(
       prefPopData.data.result.data[0].data,
       e.target.id
     );
     setPrefChartData([...prefPopChartDatas, chartData]);
-    console.log("prefPopChartDatas", prefPopChartDatas);
   };
 
   return (
     <>
-      <TopTemplate prefData={prefData} prefPopChartDatas={prefPopChartDatas} />
-      {/* ダミーチェックボックス（チェックボックス押下時の動作確認用、MainCheckBoxの代わり） */}
-      {/* <input
-        type="checkbox"
-        id="東京"
-        value="2"
-        onChange={handleChangeMainCheckBox}
-      /> */}
+      <ChangeCheckBoxContext.Provider
+        value={{
+          handleChangeMainCheckBox,
+        }}
+      >
+        <TopTemplate
+          prefData={prefData}
+          prefPopChartDatas={prefPopChartDatas}
+        />
+      </ChangeCheckBoxContext.Provider>
     </>
   );
 }
