@@ -4,7 +4,9 @@ import MainLabel from "../atoms/MainLabel";
 import molucules from "../../assets/css/molucules.module.css";
 import { PrefCheckBoxProps } from "../../types/Props";
 
-export default function PrefCheckBox({ id, prefName }: PrefCheckBoxProps) {
+import { memo } from "react";
+
+function PrefCheckBox({ id, prefName }: PrefCheckBoxProps) {
   return (
     <div className={molucules.pref_checkbox}>
       <MainCheckBox id={id} />
@@ -12,3 +14,4 @@ export default function PrefCheckBox({ id, prefName }: PrefCheckBoxProps) {
     </div>
   );
 }
+export default memo(PrefCheckBox);
