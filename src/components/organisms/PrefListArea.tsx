@@ -27,7 +27,7 @@ export default function PrefListArea({ prefData }: PrefListAreaProps) {
       <div className={organisms.pref_listarea}>
         {prefData.data.result.map((pref: PrefData) => (
           <PrefCheckBox
-            id={pref.prefName}
+            id={String(pref.prefCode)}
             prefName={pref.prefName}
             key={pref.prefName}
           />
