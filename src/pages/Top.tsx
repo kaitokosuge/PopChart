@@ -42,21 +42,3 @@ export default function Top() {
     </>
   );
 }
-// export const TestCheckbox = () => {
-//   const checkedPrefCode: string = "1";
-//   const prefPopData = useQuery({
-//     queryKey: [`${Number(checkedPrefCode)}`],
-//     queryFn: () => getPopByPrefecture(Number(checkedPrefCode)),
-//     enabled: checkedPrefCode !== null,
-//   });
-//   return (
-//     <>
-//       <input
-//         type="checkbox"
-//         id="東京"
-//         value="2"
-//         onChange={handleChangeMainCheckBox}
-//       />
-//     </>
-//   );
-// };
