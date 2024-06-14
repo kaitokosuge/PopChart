@@ -5,7 +5,7 @@ import { getPopByPrefecture } from "../../functions/getPopByPrefecture";
 import { useChangeCheckBox } from "../../hooks/useChangeCheckBox";
 import { memo } from "react";
 
-function MainCheckBox({ id }: MainCheckBoxProps) {
+function MainCheckBox({ id, prefName }: MainCheckBoxProps) {
   const { handleChangeMainCheckBox } = useChangeCheckBox();
   const prefPopData = useQuery({
     queryKey: [`${Number(id)}`],
@@ -16,7 +16,7 @@ function MainCheckBox({ id }: MainCheckBoxProps) {
   return (
     <input
       type="checkbox"
-      id={id}
+      id={prefName}
       className={atomes.main_checkbox}
       onChange={(e) => handleChangeMainCheckBox(e, prefPopData)}
     />

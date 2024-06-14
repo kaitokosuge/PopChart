@@ -9,8 +9,8 @@ import { memo } from "react";
 function PrefCheckBox({ id, prefName }: PrefCheckBoxProps) {
   return (
     <div className={molucules.pref_checkbox}>
-      <MainCheckBox id={id} />
-      <MainLabel id={id} prefName={prefName} />
+      <MainCheckBox id={id} prefName={prefName} />
+      <MainLabel prefName={prefName} />
     </div>
   );
 }
