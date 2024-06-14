@@ -3,9 +3,9 @@ export interface PrefData {
   prefName: string;
 }
 
-export interface YearAndPopObj {
-  year: number;
-  value: number;
+export interface PopLabelData {
+  label: string;
+  data: number[];
 }
 
 export interface ChartData {
