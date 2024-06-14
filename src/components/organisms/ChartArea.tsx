@@ -3,6 +3,7 @@ import HighchartsReact from "highcharts-react-official";
 import Title from "../atoms/Title";
 import { ChartDataProps } from "../../types/Props";
 import { useState } from "react";
+import { ChartData } from "../../types/Variables";
 
 export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   const [popStatus, setPopStatus] = useState(0);
@@ -10,11 +11,13 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
     setPopStatus(popStatusNum);
   };
 
-  const seriesData = prefPopChartDatas.map((item: any) => {
+  const seriesData = prefPopChartDatas.map((item: ChartData) => {
     return {
       name: item.name,
       type: item.type,
-      data: item.data[popStatus].map((item: any) => item.value),
+      data: item.data[popStatus].map(
+        (item: { year: number; value: number }) => item.value
+      ),
     };
   });
 
