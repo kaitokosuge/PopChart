@@ -11,5 +11,5 @@ export interface PopLabelData {
 export interface ChartData {
   name: string;
   type: string;
-  data: number[];
+  data: number[][];
 }
