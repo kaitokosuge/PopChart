@@ -7,10 +7,10 @@ export interface TitleProps {
 
 export interface MainCheckBoxProps {
   id: string;
+  prefName: string;
 }
 
 export interface MainLabelProps {
-  id: string;
   prefName: string;
 }
 
