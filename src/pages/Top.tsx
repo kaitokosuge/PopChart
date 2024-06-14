@@ -21,10 +21,12 @@ export default function Top() {
     if (prefPopData.isPending) {
       return <>loading</>;
     }
+
     const chartData = parseApiDataToChartData(
-      prefPopData.data.result.data[0].data,
+      prefPopData.data.result.data,
       e.target.id
     );
+
     if (prefPopChartDatas.some((item) => item.name === e.target.id)) {
       setPrefChartData(
         prefPopChartDatas.filter((item) => item.name !== e.target.id)

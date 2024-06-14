@@ -7,6 +7,6 @@ export const parseApiDataToChartData = (
   return {
     name: prefName,
     type: "line",
-    data: apiData.map((item: YearAndPopObj) => item.value),
+    data: apiData.map((item: any) => item.data),
   };
 };
