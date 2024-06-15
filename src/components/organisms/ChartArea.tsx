@@ -136,11 +136,39 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   return (
     <section className={organisms.section}>
       <Title title="グラフ" />
-      <div>
-        <p onClick={() => handleClickChangePopDataStatus(0)}>総人口</p>
-        <p onClick={() => handleClickChangePopDataStatus(1)}>年少人口</p>
-        <p onClick={() => handleClickChangePopDataStatus(2)}>生産年齢人口</p>
-        <p onClick={() => handleClickChangePopDataStatus(3)}>老年人口</p>
+      <div className={organisms.button_area}>
+        <button
+          className={
+            popStatus === 0 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(0)}
+        >
+          総人口
+        </button>
+        <button
+          className={
+            popStatus === 1 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(1)}
+        >
+          年少人口
+        </button>
+        <button
+          className={
+            popStatus === 2 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(2)}
+        >
+          生産年齢人口
+        </button>
+        <button
+          className={
+            popStatus === 3 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(3)}
+        >
+          老年人口
+        </button>
       </div>
       <HighchartsReact highcharts={Highcharts} options={options} />
     </section>

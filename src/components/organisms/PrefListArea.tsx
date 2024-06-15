@@ -9,7 +9,7 @@ export default function PrefListArea({ prefData }: PrefListAreaProps) {
     return (
       <section className={organisms.section}>
         <Title title="都道府県" />
-        都道府県データの取得中です
+        <p className={organisms.load_text}>都道府県データの取得中です</p>
       </section>
     );
   }
@@ -17,7 +17,9 @@ export default function PrefListArea({ prefData }: PrefListAreaProps) {
     return (
       <section className={organisms.section}>
         <Title title="都道府県" />
-        都道府県データの取得に失敗しました{prefData.error.message}
+        <p className={organisms.error_text}>
+          都道府県データの取得に失敗しました{prefData.error.message}
+        </p>
       </section>
     );
   }
