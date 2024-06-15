@@ -8,6 +8,9 @@
   width: 90%;
   margin: auto;
 }
+.header_logo {
+  width: 30px;
+}
 @media (min-width: 768px) {
   .header_inner {
     width: 80%;

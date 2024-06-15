@@ -5,6 +5,7 @@ export default function Header() {
     <header className={organisms.header}>
       <div className={organisms.header_inner}>
         <h1 className={organisms.header_title}>
+          <img className={organisms.header_logo} src="./img/site-logo.svg" />
           PopChart
           <span className={organisms.header_subTitle}>
             &ensp;都道府県でみる人口データ
