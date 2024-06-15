@@ -4,8 +4,12 @@
 .main_checkbox {
   width: 20px;
   height: 20px;
+  margin: 0;
+  cursor: pointer;
 }
 .main_label {
   font-size: 1.6rem;
   font-weight: bold;
+  padding-left: 5px;
+  cursor: pointer;
 }
