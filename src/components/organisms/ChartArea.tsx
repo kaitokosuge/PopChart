@@ -47,26 +47,6 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
       accessibility: {
         rangeDescription: "Range: 1960 to 2045",
       },
-      // categories: [
-      //   "1960",
-      //   "1965",
-      //   "1970",
-      //   "1975",
-      //   "1980",
-      //   "1985",
-      //   "1990",
-      //   "1995",
-      //   "2000",
-      //   "2005",
-      //   "2010",
-      //   "2015",
-      //   "2020",
-      //   "2025",
-      //   "2030",
-      //   "2035",
-      //   "2040",
-      //   "2045",
-      // ],
       categories: data,
       labels: {
         style: {
