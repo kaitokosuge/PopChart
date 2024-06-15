@@ -21,10 +21,11 @@
   color: #1c008e;
   font-size: 3.2rem;
   font-weight: bold;
+  font-family: "Lexend", sans-serif;
 }
 .header_subTitle {
   color: #1c008e;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 .pref_listarea {
@@ -70,6 +71,7 @@
   }
 }
 .button {
+  color: #1c008e;
   font-size: 1.4rem;
   margin-left: 15px;
   padding-bottom: 10px;
@@ -77,6 +79,7 @@
 }
 @media (min-width: 768px) {
   .button {
+    color: #1c008e;
     font-size: 1.6rem;
     margin-left: 20px;
     padding-bottom: 10px;
@@ -88,6 +91,7 @@
   transition: 0.5s;
 }
 .button_clicked {
+  color: #1c008e;
   font-size: 1.4rem;
   font-weight: bold;
   margin-left: 15px;
@@ -97,6 +101,7 @@
 }
 @media (min-width: 768px) {
   .button_clicked {
+    color: #1c008e;
     font-size: 1.6rem;
     font-weight: bold;
     margin-left: 20px;
