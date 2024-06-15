@@ -7,22 +7,24 @@ import { PrefData } from "../../types/Variables";
 export default function PrefListArea({ prefData }: PrefListAreaProps) {
   if (prefData.isPending) {
     return (
-      <section>
+      <section className={organisms.section}>
         <Title title="都道府県" />
-        都道府県データの取得中です
+        <p className={organisms.load_text}>都道府県データの取得中です</p>
       </section>
     );
   }
   if (prefData.error) {
     return (
-      <section>
+      <section className={organisms.section}>
         <Title title="都道府県" />
-        都道府県データの取得に失敗しました{prefData.error.message}
+        <p className={organisms.error_text}>
+          都道府県データの取得に失敗しました{prefData.error.message}
+        </p>
       </section>
     );
   }
   return (
-    <section>
+    <section className={organisms.section}>
       <Title title="都道府県" />
       <div className={organisms.pref_listarea}>
         {prefData.data.result.map((pref: PrefData) => (

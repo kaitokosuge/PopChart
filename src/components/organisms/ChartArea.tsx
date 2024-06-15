@@ -4,6 +4,7 @@ import Title from "../atoms/Title";
 import { ChartDataProps } from "../../types/Props";
 import { useState } from "react";
 import { ChartData } from "../../types/Variables";
+import organisms from "../../assets/css/organisms.module.css";
 
 export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   const [popStatus, setPopStatus] = useState(0);
@@ -22,13 +23,25 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   });
 
   const options = {
-    title: {
-      text: "都道府県 人口データ",
+    chart: {
+      height: 500,
+      backgroundColor: "#fffafa",
     },
-    series: seriesData,
+
+    title: {
+      text: "",
+    },
+    series:
+      seriesData.length === 0
+        ? [{ name: "都道府県名", type: "line", data: [] }]
+        : seriesData,
     xAxis: {
       title: {
         text: "年度",
+        style: {
+          fontSize: "1.2rem",
+          fontWeight: "bold",
+        },
       },
       accessibility: {
         rangeDescription: "Range: 1960 to 2045",
@@ -53,6 +66,27 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
         "2040",
         "2045",
       ],
+      labels: {
+        style: {
+          fontSize: "1.4rem",
+          fontWeight: "bold",
+        },
+      },
+    },
+    yAxis: {
+      title: {
+        text: "人口数",
+        style: {
+          fontSize: "1.2rem",
+          fontWeight: "bold",
+        },
+      },
+      labels: {
+        style: {
+          fontSize: "1.2rem",
+          fontWeight: "bold",
+        },
+      },
     },
     plotOptions: {
       series: {
@@ -65,16 +99,76 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
       layout: "vertical",
       align: "right",
       verticalAlign: "middle",
+      style: {
+        fontSize: "1.2rem",
+        fontWeight: "bold",
+      },
+      itemStyle: {
+        fontSize: "1.5rem",
+        fontWeight: "bold",
+      },
+    },
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 768,
+          },
+          chartOptions: {
+            legend: {
+              layout: "horizontal",
+              align: "center",
+              verticalAlign: "bottom",
+              style: {
+                fontSize: "1.1rem",
+                fontWeight: "bold",
+              },
+              itemStyle: {
+                fontSize: "1.1rem",
+                fontWeight: "bold",
+              },
+            },
+          },
+        },
+      ],
     },
   };
   return (
-    <section>
+    <section className={organisms.section}>
       <Title title="グラフ" />
-      <div>
-        <p onClick={() => handleClickChangePopDataStatus(0)}>総人口</p>
-        <p onClick={() => handleClickChangePopDataStatus(1)}>年少人口</p>
-        <p onClick={() => handleClickChangePopDataStatus(2)}>生産年齢人口</p>
-        <p onClick={() => handleClickChangePopDataStatus(3)}>老年人口</p>
+      <div className={organisms.button_area}>
+        <button
+          className={
+            popStatus === 0 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(0)}
+        >
+          総人口
+        </button>
+        <button
+          className={
+            popStatus === 1 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(1)}
+        >
+          年少人口
+        </button>
+        <button
+          className={
+            popStatus === 2 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(2)}
+        >
+          生産年齢人口
+        </button>
+        <button
+          className={
+            popStatus === 3 ? organisms.button_clicked : organisms.button
+          }
+          onClick={() => handleClickChangePopDataStatus(3)}
+        >
+          老年人口
+        </button>
       </div>
       <HighchartsReact highcharts={Highcharts} options={options} />
     </section>
