@@ -108,6 +108,30 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
         fontWeight: "bold",
       },
     },
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 768,
+          },
+          chartOptions: {
+            legend: {
+              layout: "horizontal",
+              align: "center",
+              verticalAlign: "bottom",
+              style: {
+                fontSize: "1.1rem",
+                fontWeight: "bold",
+              },
+              itemStyle: {
+                fontSize: "1.1rem",
+                fontWeight: "bold",
+              },
+            },
+          },
+        },
+      ],
+    },
   };
   return (
     <section className={organisms.section}>
