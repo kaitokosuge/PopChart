@@ -5,13 +5,13 @@ import { ChartDataProps } from "../../types/Props";
 import { useState } from "react";
 import { ChartData } from "../../types/Variables";
 import organisms from "../../assets/css/organisms.module.css";
+import { parseApiDataToYearData } from "../../functions/parseApiDataToYearData";
 
 export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   const [popStatus, setPopStatus] = useState(0);
   const handleClickChangePopDataStatus = (popStatusNum: number) => {
     setPopStatus(popStatusNum);
   };
-
   const seriesData = prefPopChartDatas.map((item: ChartData) => {
     return {
       name: item.name,
@@ -21,6 +21,7 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
       ),
     };
   });
+  const data = parseApiDataToYearData(prefPopChartDatas);
 
   const options = {
     chart: {
@@ -46,26 +47,27 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
       accessibility: {
         rangeDescription: "Range: 1960 to 2045",
       },
-      categories: [
-        "1960",
-        "1965",
-        "1970",
-        "1975",
-        "1980",
-        "1985",
-        "1990",
-        "1995",
-        "2000",
-        "2005",
-        "2010",
-        "2015",
-        "2020",
-        "2025",
-        "2030",
-        "2035",
-        "2040",
-        "2045",
-      ],
+      // categories: [
+      //   "1960",
+      //   "1965",
+      //   "1970",
+      //   "1975",
+      //   "1980",
+      //   "1985",
+      //   "1990",
+      //   "1995",
+      //   "2000",
+      //   "2005",
+      //   "2010",
+      //   "2015",
+      //   "2020",
+      //   "2025",
+      //   "2030",
+      //   "2035",
+      //   "2040",
+      //   "2045",
+      // ],
+      categories: data,
       labels: {
         style: {
           fontSize: "1.4rem",
