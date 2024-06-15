@@ -4,6 +4,7 @@ import Title from "../atoms/Title";
 import { ChartDataProps } from "../../types/Props";
 import { useState } from "react";
 import { ChartData } from "../../types/Variables";
+import organisms from "../../assets/css/organisms.module.css";
 
 export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   const [popStatus, setPopStatus] = useState(0);
@@ -109,7 +110,7 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
     },
   };
   return (
-    <section>
+    <section className={organisms.section}>
       <Title title="グラフ" />
       <div>
         <p onClick={() => handleClickChangePopDataStatus(0)}>総人口</p>
