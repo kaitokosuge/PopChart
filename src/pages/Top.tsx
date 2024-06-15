@@ -36,6 +36,9 @@ export default function Top() {
     }
   };
 
+  const manageAllCheckBox = () => {
+    setPrefChartData([]);
+  };
   return (
     <>
       <ChangeCheckBoxContext.Provider
@@ -46,6 +49,7 @@ export default function Top() {
         <TopTemplate
           prefData={prefData}
           prefPopChartDatas={prefPopChartDatas}
+          manageAllCheckBox={manageAllCheckBox}
         />
       </ChangeCheckBoxContext.Provider>
     </>

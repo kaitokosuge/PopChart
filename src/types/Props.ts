@@ -22,10 +22,12 @@ export interface PrefCheckBoxProps {
 export interface TopTemplateProps {
   prefData: UseQueryResult<any, Error>;
   prefPopChartDatas: ChartData[];
+  manageAllCheckBox: () => void;
 }
 
 export interface PrefListAreaProps {
   prefData: UseQueryResult<any, Error>;
+  manageAllCheckBox: () => void;
 }
 
 export interface ChartDataProps {

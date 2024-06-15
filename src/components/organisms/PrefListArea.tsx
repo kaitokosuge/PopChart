@@ -4,7 +4,10 @@ import organisms from "../../assets/css/organisms.module.css";
 import { PrefListAreaProps } from "../../types/Props";
 import { PrefData } from "../../types/Variables";
 
-export default function PrefListArea({ prefData }: PrefListAreaProps) {
+export default function PrefListArea({
+  prefData,
+  manageAllCheckBox,
+}: PrefListAreaProps) {
   if (prefData.isPending) {
     return (
       <section className={organisms.section}>
