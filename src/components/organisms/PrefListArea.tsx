@@ -7,7 +7,7 @@ import ManageCheckBoxContainer from "../molucules/ManageCheckBoxContainer";
 
 export default function PrefListArea({
   prefData,
-  manageAllCheckBox,
+  manageAllCheckBoxReset,
 }: PrefListAreaProps) {
   if (prefData.isPending) {
     return (
@@ -39,7 +39,9 @@ export default function PrefListArea({
           />
         ))}
       </div>
-      <ManageCheckBoxContainer manageAllCheckBox={manageAllCheckBox} />
+      <ManageCheckBoxContainer
+        manageAllCheckBoxReset={manageAllCheckBoxReset}
+      />
     </section>
   );
 }

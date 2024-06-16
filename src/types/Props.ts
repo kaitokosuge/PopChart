@@ -16,7 +16,7 @@ export interface MainLabelProps {
 
 export interface MainButtonPropsProps {
   buttonValue: string;
-  manageAllCheckBox: () => void;
+  manageAllCheckBoxReset: () => void;
 }
 
 export interface PrefCheckBoxProps {
@@ -25,18 +25,18 @@ export interface PrefCheckBoxProps {
 }
 
 export interface ManageCheckBoxContainerPropsProps {
-  manageAllCheckBox: () => void;
+  manageAllCheckBoxReset: () => void;
 }
 
 export interface TopTemplateProps {
   prefData: UseQueryResult<any, Error>;
   prefPopChartDatas: ChartData[];
-  manageAllCheckBox: () => void;
+  manageAllCheckBoxReset: () => void;
 }
 
 export interface PrefListAreaProps {
   prefData: UseQueryResult<any, Error>;
-  manageAllCheckBox: () => void;
+  manageAllCheckBoxReset: () => void;
 }
 
 export interface ChartDataProps {

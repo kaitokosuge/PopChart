@@ -6,7 +6,7 @@ import PrefListArea from "../organisms/PrefListArea";
 export default function TopTemplate({
   prefData,
   prefPopChartDatas,
-  manageAllCheckBox,
+  manageAllCheckBoxReset,
 }: TopTemplateProps) {
   return (
     <>
@@ -14,7 +14,7 @@ export default function TopTemplate({
       <main>
         <PrefListArea
           prefData={prefData}
-          manageAllCheckBox={manageAllCheckBox}
+          manageAllCheckBoxReset={manageAllCheckBoxReset}
         />
         <ChartArea prefPopChartDatas={prefPopChartDatas} />
       </main>
