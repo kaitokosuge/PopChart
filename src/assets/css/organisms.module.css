@@ -54,8 +54,19 @@
   gap: 17px;
   grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
   margin-top: 20px;
-  height: 150px;
+  height: 200px;
   overflow: scroll;
+  padding-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .pref_reduced_listarea {
+    display: grid;
+    gap: 17px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+    margin-top: 20px;
+    height: 200px;
+    overflow: scroll;
+  }
 }
 @media (min-width: 768px) {
   .pref_listarea {
@@ -68,7 +79,16 @@
 .section {
   width: 90%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .section {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+  }
 }
 .section_chart {
   width: 100%;

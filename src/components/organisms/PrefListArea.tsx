@@ -50,7 +50,7 @@ export default function PrefListArea({
           </button>
         </div>
       </div>
-
+      <div className={isReduce ? atomes.shadowArea : ""}></div>
       <div
         className={
           isReduce ? organisms.pref_reduced_listarea : organisms.pref_listarea
