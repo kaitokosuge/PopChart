@@ -4,12 +4,18 @@ import organisms from "../../assets/css/organisms.module.css";
 import { PrefListAreaProps } from "../../types/Props";
 import { PrefData } from "../../types/Variables";
 import ManageCheckBoxContainer from "../molucules/ManageCheckBoxContainer";
+import atomes from "../../assets/css/atoms.module.css";
+import { useState } from "react";
 
 export default function PrefListArea({
   prefData,
   manageAllCheckBoxReset,
   isAllReset,
 }: PrefListAreaProps) {
+  const [isReduce, setIsReduce] = useState(false);
+  const handleClickReduceCheckBox = () => {
+    setIsReduce(!isReduce);
+  };
   if (prefData.isPending) {
     return (
       <section className={organisms.section}>
@@ -32,12 +38,24 @@ export default function PrefListArea({
     <section className={organisms.section}>
       <div className={organisms.section_titleArea}>
         <Title title="都道府県" />
-        <ManageCheckBoxContainer
-          manageAllCheckBoxReset={manageAllCheckBoxReset}
-        />
+        <div className={organisms.section_titleArea}>
+          <ManageCheckBoxContainer
+            manageAllCheckBoxReset={manageAllCheckBoxReset}
+          />
+          <button
+            className={atomes.main_button}
+            onClick={handleClickReduceCheckBox}
+          >
+            表示件数を減らす
+          </button>
+        </div>
       </div>
 
-      <div className={organisms.pref_listarea}>
+      <div
+        className={
+          isReduce ? organisms.pref_reduced_listarea : organisms.pref_listarea
+        }
+      >
         {prefData.data.result.map((pref: PrefData) => (
           <PrefCheckBox
             id={String(pref.prefCode)}

@@ -17,7 +17,7 @@ export interface MainLabelProps {
 
 export interface MainButtonPropsProps {
   buttonValue: string;
-  manageAllCheckBoxReset: () => void;
+  manageAllCheckBoxReset?: () => void;
 }
 
 export interface PrefCheckBoxProps {
