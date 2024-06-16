@@ -56,6 +56,11 @@
     margin-top: 50px;
   }
 }
+.section_titleArea {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
 .load_text {
   font-size: 1.6rem;
   margin-top: 20px;

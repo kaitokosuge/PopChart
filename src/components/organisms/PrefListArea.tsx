@@ -30,7 +30,13 @@ export default function PrefListArea({
   }
   return (
     <section className={organisms.section}>
-      <Title title="都道府県" />
+      <div className={organisms.section_titleArea}>
+        <Title title="都道府県" />
+        <ManageCheckBoxContainer
+          manageAllCheckBoxReset={manageAllCheckBoxReset}
+        />
+      </div>
+
       <div className={organisms.pref_listarea}>
         {prefData.data.result.map((pref: PrefData) => (
           <PrefCheckBox
@@ -41,9 +47,6 @@ export default function PrefListArea({
           />
         ))}
       </div>
-      <ManageCheckBoxContainer
-        manageAllCheckBoxReset={manageAllCheckBoxReset}
-      />
     </section>
   );
 }
