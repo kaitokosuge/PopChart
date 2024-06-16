@@ -46,7 +46,7 @@ export default function PrefListArea({
             className={atomes.main_button}
             onClick={handleClickReduceCheckBox}
           >
-            表示件数を減らす
+            {isReduce ? <>表示件数を戻す</> : <>表示件数を減らす</>}
           </button>
         </div>
       </div>
