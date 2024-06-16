@@ -1,5 +1,5 @@
 export const getPrefectures = async () => {
-  const apiKey = import.meta.env.RESAS_API_KEY;
+  const apiKey = process.env.POP_RESAS_API_KEY;
 
   if (!apiKey) {
     throw new Error("RESAS_API_KEY is not defined");

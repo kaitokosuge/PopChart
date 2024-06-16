@@ -21,7 +21,6 @@ function MainCheckBox({ id, prefName, isAllReset }: MainCheckBoxProps) {
 
   useEffect(() => {
     if (isAllReset) {
-      console.log("good");
       setIsChecked(false);
     }
   }, [isAllReset]);
