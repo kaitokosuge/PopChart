@@ -1,7 +1,8 @@
+import { memo } from "react";
 import atomes from "../../assets/css/atoms.module.css";
 import { MainButtonPropsProps } from "../../types/Props";
 
-export default function MainButton({
+function MainButton({
   buttonValue,
   manageAllCheckBoxReset,
 }: MainButtonPropsProps) {
@@ -11,3 +12,4 @@ export default function MainButton({
     </button>
   );
 }
+export default memo(MainButton);
