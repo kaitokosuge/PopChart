@@ -8,6 +8,7 @@ export interface TitleProps {
 export interface MainCheckBoxProps {
   id: string;
   prefName: string;
+  isAllReset: boolean;
 }
 
 export interface MainLabelProps {
@@ -22,6 +23,7 @@ export interface MainButtonPropsProps {
 export interface PrefCheckBoxProps {
   id: string;
   prefName: string;
+  isAllReset: boolean;
 }
 
 export interface ManageCheckBoxContainerPropsProps {
@@ -32,11 +34,13 @@ export interface TopTemplateProps {
   prefData: UseQueryResult<any, Error>;
   prefPopChartDatas: ChartData[];
   manageAllCheckBoxReset: () => void;
+  isAllReset: boolean;
 }
 
 export interface PrefListAreaProps {
   prefData: UseQueryResult<any, Error>;
   manageAllCheckBoxReset: () => void;
+  isAllReset: boolean;
 }
 
 export interface ChartDataProps {

@@ -7,6 +7,7 @@ export default function TopTemplate({
   prefData,
   prefPopChartDatas,
   manageAllCheckBoxReset,
+  isAllReset,
 }: TopTemplateProps) {
   return (
     <>
@@ -15,6 +16,7 @@ export default function TopTemplate({
         <PrefListArea
           prefData={prefData}
           manageAllCheckBoxReset={manageAllCheckBoxReset}
+          isAllReset={isAllReset}
         />
         <ChartArea prefPopChartDatas={prefPopChartDatas} />
       </main>

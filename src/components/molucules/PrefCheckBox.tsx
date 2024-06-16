@@ -6,10 +6,10 @@ import { PrefCheckBoxProps } from "../../types/Props";
 
 import { memo } from "react";
 
-function PrefCheckBox({ id, prefName }: PrefCheckBoxProps) {
+function PrefCheckBox({ id, prefName, isAllReset }: PrefCheckBoxProps) {
   return (
     <div className={molucules.pref_checkbox}>
-      <MainCheckBox id={id} prefName={prefName} />
+      <MainCheckBox id={id} prefName={prefName} isAllReset={isAllReset} />
       <MainLabel prefName={prefName} />
     </div>
   );

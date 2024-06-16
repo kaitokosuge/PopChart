@@ -3,10 +3,10 @@ import { MainButtonPropsProps } from "../../types/Props";
 
 export default function MainButton({
   buttonValue,
-  manageAllCheckBox,
+  manageAllCheckBoxReset,
 }: MainButtonPropsProps) {
   return (
-    <button className={atomes.main_button} onClick={manageAllCheckBox}>
+    <button className={atomes.main_button} onClick={manageAllCheckBoxReset}>
       {buttonValue}
     </button>
   );
