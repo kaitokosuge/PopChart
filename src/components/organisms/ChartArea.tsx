@@ -150,7 +150,9 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
           老年人口
         </button>
       </div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <div className={organisms.section_chart}>
+        <HighchartsReact highcharts={Highcharts} options={options} />
+      </div>
     </section>
   );
 }
