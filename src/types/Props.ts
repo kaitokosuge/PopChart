@@ -14,9 +14,18 @@ export interface MainLabelProps {
   prefName: string;
 }
 
+export interface MainButtonPropsProps {
+  buttonValue: string;
+  manageAllCheckBox: () => void;
+}
+
 export interface PrefCheckBoxProps {
   id: string;
   prefName: string;
+}
+
+export interface ManageCheckBoxContainerPropsProps {
+  manageAllCheckBox: () => void;
 }
 
 export interface TopTemplateProps {

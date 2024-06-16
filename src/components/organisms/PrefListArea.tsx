@@ -3,6 +3,7 @@ import PrefCheckBox from "../molucules/PrefCheckBox";
 import organisms from "../../assets/css/organisms.module.css";
 import { PrefListAreaProps } from "../../types/Props";
 import { PrefData } from "../../types/Variables";
+import ManageCheckBoxContainer from "../molucules/ManageCheckBoxContainer";
 
 export default function PrefListArea({
   prefData,
@@ -38,6 +39,7 @@ export default function PrefListArea({
           />
         ))}
       </div>
+      <ManageCheckBoxContainer manageAllCheckBox={manageAllCheckBox} />
     </section>
   );
 }
