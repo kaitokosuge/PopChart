@@ -8,20 +8,34 @@
   width: 90%;
   margin: auto;
 }
-.header_logo {
-  width: 30px;
-}
 @media (min-width: 768px) {
   .header_inner {
     width: 80%;
     margin: auto;
   }
 }
+.header_logo {
+  width: 20px;
+}
+
+@media (min-width: 768px) {
+  .header_logo {
+    width: 30px;
+  }
+}
 .header_title {
   color: #1c008e;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   font-weight: bold;
   font-family: "Lexend", sans-serif;
+}
+@media (min-width: 768px) {
+  .header_title {
+    color: #1c008e;
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-family: "Lexend", sans-serif;
+  }
 }
 .header_subTitle {
   color: #1c008e;
