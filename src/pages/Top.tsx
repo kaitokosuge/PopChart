@@ -35,7 +35,12 @@ export default function Top() {
       setPrefChartData([...prefPopChartDatas, chartData]);
     }
   };
-
+  const [isAllReset, setIsAllReset] = useState(false);
+  const manageAllCheckBoxReset = () => {
+    setPrefChartData([]);
+    setIsAllReset(true);
+    setTimeout(() => setIsAllReset(false), 100);
+  };
   return (
     <>
       <ChangeCheckBoxContext.Provider
@@ -46,6 +51,8 @@ export default function Top() {
         <TopTemplate
           prefData={prefData}
           prefPopChartDatas={prefPopChartDatas}
+          manageAllCheckBoxReset={manageAllCheckBoxReset}
+          isAllReset={isAllReset}
         />
       </ChangeCheckBoxContext.Provider>
     </>

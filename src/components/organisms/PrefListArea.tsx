@@ -3,8 +3,13 @@ import PrefCheckBox from "../molucules/PrefCheckBox";
 import organisms from "../../assets/css/organisms.module.css";
 import { PrefListAreaProps } from "../../types/Props";
 import { PrefData } from "../../types/Variables";
+import ManageCheckBoxContainer from "../molucules/ManageCheckBoxContainer";
 
-export default function PrefListArea({ prefData }: PrefListAreaProps) {
+export default function PrefListArea({
+  prefData,
+  manageAllCheckBoxReset,
+  isAllReset,
+}: PrefListAreaProps) {
   if (prefData.isPending) {
     return (
       <section className={organisms.section}>
@@ -32,9 +37,13 @@ export default function PrefListArea({ prefData }: PrefListAreaProps) {
             id={String(pref.prefCode)}
             prefName={pref.prefName}
             key={pref.prefName}
+            isAllReset={isAllReset}
           />
         ))}
       </div>
+      <ManageCheckBoxContainer
+        manageAllCheckBoxReset={manageAllCheckBoxReset}
+      />
     </section>
   );
 }
