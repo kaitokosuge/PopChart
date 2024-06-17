@@ -43,7 +43,7 @@ export default function PrefListArea({
             manageAllCheckBoxReset={manageAllCheckBoxReset}
           />
           <button
-            className={atomes.main_button}
+            className={atomes.main_button_pc_hidden}
             onClick={handleClickReduceCheckBox}
           >
             {isReduce ? <>表示件数を戻す</> : <>表示件数を減らす</>}
