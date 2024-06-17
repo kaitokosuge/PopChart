@@ -1,6 +1,5 @@
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import Title from "../atoms/Title";
 import { ChartDataProps } from "../../types/Props";
 import { useState } from "react";
 import { ChartData } from "../../types/Variables";
@@ -117,7 +116,6 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
   };
   return (
     <section className={organisms.section}>
-      <Title title="グラフ" />
       <div className={organisms.button_area}>
         <button
           className={
@@ -152,7 +150,9 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
           老年人口
         </button>
       </div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <div className={organisms.section_chart}>
+        <HighchartsReact highcharts={Highcharts} options={options} />
+      </div>
     </section>
   );
 }
