@@ -10,6 +10,7 @@ export default function Top() {
   const prefData = useQuery({
     queryKey: [`prefectures`],
     queryFn: () => getPrefectures(),
+    staleTime: Infinity,
   });
 
   const [prefPopChartDatas, setPrefChartData] = useState<ChartData[]>([]);
