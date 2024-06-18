@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import PrefListArea from "../PrefListArea";
 import { UseQueryResult } from "@tanstack/react-query";
 
-describe("hi", () => {
+describe("都道府県データの取得関連", () => {
   it("403エラー時に「都道府県データの取得に失敗しました」が表示されるか", () => {
     const mockQueryResult: UseQueryResult<any, Error> = {
       data: {

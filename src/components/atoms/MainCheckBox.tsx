@@ -18,20 +18,35 @@ function MainCheckBox({ id, prefName, isAllReset }: MainCheckBoxProps) {
     queryFn: () => getPopByPrefecture(Number(id)),
     staleTime: Infinity,
   });
-
   useEffect(() => {
     if (isAllReset) {
       setIsChecked(false);
     }
   }, [isAllReset]);
+  if (prefPopData.error) {
+    return <p>都道府県人口データの取得に失敗しました</p>;
+  }
   return (
-    <input
-      type="checkbox"
-      id={prefName}
-      className={atomes.main_checkbox}
-      onChange={handleChangeCheckBox}
-      checked={isChecked}
-    />
+    <>
+      {prefPopData.data !== undefined ? (
+        <input
+          type="checkbox"
+          id={prefName}
+          className={atomes.main_checkbox}
+          onChange={handleChangeCheckBox}
+          checked={isChecked}
+        />
+      ) : (
+        <input
+          type="checkbox"
+          id={prefName}
+          className={atomes.main_checkbox}
+          onChange={handleChangeCheckBox}
+          checked={isChecked}
+          disabled
+        />
+      )}
+    </>
   );
 }
 export default memo(MainCheckBox);
