@@ -1,10 +1,10 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import PrefListArea from "../PrefListArea";
 import { UseQueryResult } from "@tanstack/react-query";
 
 describe("都道府県データの取得関連", () => {
-  it("403エラー時に「都道府県データの取得に失敗しました」が表示されるか", () => {
+  test("403エラー時に「都道府県データの取得に失敗しました」が表示されるか", () => {
     const mockQueryResult: UseQueryResult<any, Error> = {
       data: {
         description: "",
