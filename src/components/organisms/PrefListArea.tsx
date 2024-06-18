@@ -12,7 +12,6 @@ export default function PrefListArea({
   manageAllCheckBoxReset,
   isAllReset,
 }: PrefListAreaProps) {
-  console.log(prefData);
   const [isReduce, setIsReduce] = useState(false);
   const handleClickReduceCheckBox = () => {
     setIsReduce(!isReduce);
@@ -57,7 +56,11 @@ export default function PrefListArea({
           isReduce ? organisms.pref_reduced_listarea : organisms.pref_listarea
         }
       >
-        {prefData.data.message !== "Forbidden." ? (
+        {prefData.data.message === "Forbidden." ? (
+          <p>都道府県データの取得に失敗しました(403)</p>
+        ) : prefData.data.message === "404. That's an error." ? (
+          <p>都道府県データの取得に失敗しました(404)</p>
+        ) : (
           prefData.data.result.map((pref: PrefData) => (
             <PrefCheckBox
               id={String(pref.prefCode)}
@@ -66,8 +69,6 @@ export default function PrefListArea({
               isAllReset={isAllReset}
             />
           ))
-        ) : (
-          <p>都道府県データの取得に失敗しました</p>
         )}
       </div>
     </section>
