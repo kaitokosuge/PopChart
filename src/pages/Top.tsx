@@ -4,7 +4,7 @@ import { getPrefectures } from "../functions/getPrefectures";
 import { parseApiDataToChartData } from "../functions/parseApiDataToChartData";
 import { useState } from "react";
 import { ChartData } from "../types/Variables";
-import { ChangeCheckBoxContext } from "../hooks/useChangeCheckBox";
+import { changeCheckBoxContext } from "../hooks/useChangeCheckBox";
 
 export default function Top() {
   const prefData = useQuery({
@@ -44,7 +44,7 @@ export default function Top() {
   };
   return (
     <>
-      <ChangeCheckBoxContext.Provider
+      <changeCheckBoxContext.Provider
         value={{
           handleChangeMainCheckBox,
         }}
@@ -55,7 +55,7 @@ export default function Top() {
           manageAllCheckBoxReset={manageAllCheckBoxReset}
           isAllReset={isAllReset}
         />
-      </ChangeCheckBoxContext.Provider>
+      </changeCheckBoxContext.Provider>
     </>
   );
 }

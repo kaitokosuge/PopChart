@@ -89,6 +89,9 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
         fontWeight: "bold",
       },
     },
+    accessibility: {
+      enabled: false,
+    },
     responsive: {
       rules: [
         {

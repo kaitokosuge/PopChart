@@ -8,12 +8,12 @@ interface ChartContextType {
   ) => JSX.Element | undefined;
 }
 
-export const ChangeCheckBoxContext = createContext<
+export const changeCheckBoxContext = createContext<
   ChartContextType | undefined
 >(undefined);
 
 export const useChangeCheckBox = () => {
-  const context = useContext(ChangeCheckBoxContext);
+  const context = useContext(changeCheckBoxContext);
   if (!context) {
     throw new Error("useChart must be used within a ChartProvider");
   }

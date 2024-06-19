@@ -56,14 +56,20 @@ export default function PrefListArea({
           isReduce ? organisms.pref_reduced_listarea : organisms.pref_listarea
         }
       >
-        {prefData.data.result.map((pref: PrefData) => (
-          <PrefCheckBox
-            id={String(pref.prefCode)}
-            prefName={pref.prefName}
-            key={pref.prefName}
-            isAllReset={isAllReset}
-          />
-        ))}
+        {prefData.data.message === "Forbidden." ? (
+          <p>都道府県データの取得に失敗しました(403)</p>
+        ) : prefData.data.message === "404. That's an error." ? (
+          <p>都道府県データの取得に失敗しました(404)</p>
+        ) : (
+          prefData.data.result.map((pref: PrefData) => (
+            <PrefCheckBox
+              id={String(pref.prefCode)}
+              prefName={pref.prefName}
+              key={pref.prefName}
+              isAllReset={isAllReset}
+            />
+          ))
+        )}
       </div>
     </section>
   );
