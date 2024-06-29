@@ -17,7 +17,7 @@ export default function Top() {
 
   const handleChangeMainCheckBox = (
     e: React.ChangeEvent<HTMLInputElement>,
-    prefPopData: UseQueryResult<any, Error>
+    prefPopData: UseQueryResult<any, Error>,
   ) => {
     if (prefPopData.isPending) {
       return <>loading</>;
@@ -25,12 +25,12 @@ export default function Top() {
 
     const chartData = parseApiDataToChartData(
       prefPopData.data.result.data,
-      e.target.id
+      e.target.id,
     );
 
     if (prefPopChartDatas.some((item) => item.name === e.target.id)) {
       setPrefChartData(
-        prefPopChartDatas.filter((item) => item.name !== e.target.id)
+        prefPopChartDatas.filter((item) => item.name !== e.target.id),
       );
     } else {
       setPrefChartData([...prefPopChartDatas, chartData]);

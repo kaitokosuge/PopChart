@@ -40,10 +40,10 @@ describe("都道府県データの取得関連", () => {
         prefData={mockQueryResult}
         manageAllCheckBoxReset={vi.fn()}
         isAllReset={false}
-      />
+      />,
     );
     expect(
-      screen.getByText("都道府県データの取得に失敗しました(403)")
+      screen.getByText("都道府県データの取得に失敗しました(403)"),
     ).toBeTruthy();
   });
   test("404エラー時に「都道府県データの取得に失敗しました(404)」が表示されるか", () => {
@@ -82,10 +82,10 @@ describe("都道府県データの取得関連", () => {
         prefData={mockQueryResult}
         manageAllCheckBoxReset={vi.fn()}
         isAllReset={false}
-      />
+      />,
     );
     expect(
-      screen.getByText("都道府県データの取得に失敗しました(404)")
+      screen.getByText("都道府県データの取得に失敗しました(404)"),
     ).toBeTruthy();
   });
 });

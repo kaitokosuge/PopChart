@@ -11,7 +11,7 @@ export const getPrefectures = async () => {
       headers: {
         "X-API-KEY": apiKey,
       },
-    }
+    },
   );
   if (!res.ok) {
     const errorText = await res.text();

@@ -12,7 +12,7 @@ test("APIキーが定義されていない場合エラーテキストを返す�
   const originalEnv = import.meta.env.VITE_RESAS_API_KEY;
   import.meta.env.VITE_RESAS_API_KEY = "";
   await expect(getPrefectures()).rejects.toThrow(
-    "RESAS_API_KEY is not defined"
+    "RESAS_API_KEY is not defined",
   );
   import.meta.env.VITE_RESAS_API_KEY = originalEnv;
 });
@@ -27,9 +27,9 @@ test("都道府県ごとのデータ取得時、RESAS APIの4つのカテゴリ�
   const expectNames = ["総人口", "年少人口", "生産年齢人口", "老年人口"];
   const resasCategoriesName = res.result.data.map(
     (item: { label: string; data: { year: number; value: number }[] }) =>
-      item.label
+      item.label,
   );
   expect(
-    JSON.stringify(expectNames) === JSON.stringify(resasCategoriesName)
+    JSON.stringify(expectNames) === JSON.stringify(resasCategoriesName),
   ).toBeTruthy();
 });

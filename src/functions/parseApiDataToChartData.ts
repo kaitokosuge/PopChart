@@ -2,7 +2,7 @@ import { PopLabelData } from "../types/Variables";
 
 export const parseApiDataToChartData = (
   apiData: PopLabelData[],
-  prefName: string
+  prefName: string,
 ) => {
   return {
     name: prefName,
