@@ -16,7 +16,7 @@ export default function ChartArea({ prefPopChartDatas }: ChartDataProps) {
       name: item.name,
       type: item.type,
       data: item.data[popStatus].map(
-        (item: { year: number; value: number }) => item.value
+        (item: { year: number; value: number }) => item.value,
       ),
     };
   });

@@ -10,7 +10,7 @@ export const getPopByPrefecture = async (prefCode: number) => {
       headers: {
         "X-API-KEY": apiKey,
       },
-    }
+    },
   );
   if (!res.ok) {
     const errorText = await res.text();
